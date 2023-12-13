@@ -139,6 +139,16 @@ class TimerHomePage extends StatelessWidget {
                   ),
                 ],
               ),
+              Container(
+                padding: const EdgeInsets.all(10.0),
+                child: Text(
+                  'Dikerjakan oleh Rizqi Hasanuddin, NIM 21201123',
+                  style: TextStyle(
+                    fontSize: 14.0,
+                    color: Colors.black,
+                  ),
+                ),
+              ),
             ],
           ),
         );

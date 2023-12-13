@@ -66,78 +66,97 @@ class _SettingsState extends State<Settings> {
 
   @override
   Widget build(BuildContext context) {
-    return GridView.count(
-      crossAxisCount: 3,
-      childAspectRatio: 3,
-      scrollDirection: Axis.vertical,
-      crossAxisSpacing: 10,
-      mainAxisSpacing: 10,
-      padding: const EdgeInsets.all(20),
-      children: <Widget>[
-        const Text('Kerja'),
-        const Text(''),
-        const Text(''),
-        MaterialButton(
-          color: const Color(0xff455A64),
-          onPressed: () => updateSettings(WORKTIME, -1),
-          child: const Text(
-            '-',
-            style: TextStyle(color: Colors.white),
+    return Column(
+      children: [
+        Expanded(
+          child: SizedBox(
+            height: 300, // Sesuaikan tinggi sesuai kebutuhan
+            child: GridView.count(
+              crossAxisCount: 3,
+              childAspectRatio: 3,
+              scrollDirection: Axis.vertical,
+              crossAxisSpacing: 10,
+              mainAxisSpacing: 10,
+              padding: const EdgeInsets.all(20),
+              children: <Widget>[
+                const Text('Kerja'),
+                const Text(''),
+                const Text(''),
+                MaterialButton(
+                  color: const Color(0xff455A64),
+                  onPressed: () => updateSettings(WORKTIME, -1),
+                  child: const Text(
+                    '-',
+                    style: TextStyle(color: Colors.white),
+                  ),
+                ),
+                TextField(
+                  controller: txtWork,
+                ),
+                MaterialButton(
+                  color: const Color(0xff009688),
+                  onPressed: () => updateSettings(WORKTIME, 1),
+                  child: const Text(
+                    '+',
+                    style: TextStyle(color: Colors.white),
+                  ),
+                ),
+                const Text('Short Break'),
+                const Text(''),
+                const Text(''),
+                MaterialButton(
+                  color: const Color(0xff455A64),
+                  onPressed: () => updateSettings(SHORTBREAK, -1),
+                  child: const Text(
+                    '-',
+                    style: TextStyle(color: Colors.white),
+                  ),
+                ),
+                TextField(
+                  controller: txtShort,
+                ),
+                MaterialButton(
+                  color: const Color(0xff009688),
+                  onPressed: () => updateSettings(SHORTBREAK, 1),
+                  child: const Text(
+                    '+',
+                    style: TextStyle(color: Colors.white),
+                  ),
+                ),
+                const Text('Long Break'),
+                const Text(''),
+                const Text(''),
+                MaterialButton(
+                  color: const Color(0xff455A64),
+                  onPressed: () => updateSettings(LONGBREAK, -1),
+                  child: const Text(
+                    '-',
+                    style: TextStyle(color: Colors.white),
+                  ),
+                ),
+                TextField(
+                  controller: txtLong,
+                ),
+                MaterialButton(
+                  color: const Color(0xff009688),
+                  onPressed: () => updateSettings(LONGBREAK, 1),
+                  child: const Text(
+                    '+',
+                    style: TextStyle(color: Colors.white),
+                  ),
+                ),
+              ],
+            ),
           ),
         ),
-        TextField(
-          controller: txtWork,
-        ),
-        MaterialButton(
-          color: const Color(0xff009688),
-          onPressed: () => updateSettings(WORKTIME, 1),
-          child: const Text(
-            '+',
-            style: TextStyle(color: Colors.white),
-          ),
-        ),
-        const Text('Short Break'),
-        const Text(''),
-        const Text(''),
-        MaterialButton(
-          color: const Color(0xff455A64),
-          onPressed: () => updateSettings(SHORTBREAK, -1),
-          child: const Text(
-            '-',
-            style: TextStyle(color: Colors.white),
-          ),
-        ),
-        TextField(
-          controller: txtShort,
-        ),
-        MaterialButton(
-          color: const Color(0xff009688),
-          onPressed: () => updateSettings(SHORTBREAK, 1),
-          child: const Text(
-            '+',
-            style: TextStyle(color: Colors.white),
-          ),
-        ),
-        const Text('Long Break'),
-        const Text(''),
-        const Text(''),
-        MaterialButton(
-          color: const Color(0xff455A64),
-          onPressed: () => updateSettings(LONGBREAK, -1),
-          child: const Text(
-            '-',
-            style: TextStyle(color: Colors.white),
-          ),
-        ),
-        TextField(
-          controller: txtLong,
-        ),
-        MaterialButton(
-          color: const Color(0xff009688),
-          onPressed: () => updateSettings(LONGBREAK, 1),
-          child: const Text(
-            '+',
-            style: TextStyle(color: Colors.white),
+        Container(
+          padding: const EdgeInsets.all(16.0),
+          child: Text(
+            'Dikerjakan oleh Rizqi Hasanuddin, NIM 21201123',
+            style: TextStyle(
+              fontSize: 14.0,
+              color: Colors.black,
+            ),
           ),
         ),
       ],
